@@ -11,6 +11,8 @@ db.sqlite3
 
 venv
 
+secret
+
 __pycache__/
 */__pycache__/
 *.py[cod]
