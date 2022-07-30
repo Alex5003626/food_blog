@@ -13,6 +13,8 @@ class RecipeInLine(admin.StackedInline):  # для PostAdmin --> inlines
 class PostAdmin(admin.ModelAdmin):
     list_display = ["title", "category", "author", "create_at", "id"]
     inlines = [RecipeInLine]  # Позволяет добавлять рецепт прям во время редактирования Post
+    save_as = True  # добавляет поле "сохранить как новый объект
+    save_on_top = True
 
 
 @admin.register(models.Recipe)  # указываем модель, которую мы хотим подключить
