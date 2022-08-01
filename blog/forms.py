@@ -1,11 +1,11 @@
 from django import forms
-from .models import ContactModel
+from .models import Comment
 
 
-class ContactForm(forms.ModelForm):
+class CommentForm(forms.ModelForm):
     class Meta:
-        model = ContactModel
-        fields = '__all__'
+        model = Comment
+        exclude = ['create_at', 'post']  # какие поля мы исключаем
         widgets = {
             'name': forms.TextInput(attrs={'placeholder': 'Name'}),
             'email': forms.EmailInput(attrs={'placeholder': 'Email'}),

@@ -22,9 +22,14 @@ class RecipeAdmin(admin.ModelAdmin):
     list_display = ["name", "prep_time", "cook_time", "post"]
 
 
+@admin.register(models.Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['name', 'email', 'website', 'create_at', 'id']
+
+
 admin.site.register(models.Category, MPTTModelAdmin)
 admin.site.register(models.Tag)
-admin.site.register(models.Comment)
+# admin.site.register(models.Comment)
 # admin.site.register(models.Post, PostAdmin) <-- можно делать так, если НЕ с декоратором
 # admin.site.register(models.Recipe, RecipeAdmin) <-- можно делать так, если НЕ с декоратором
 
